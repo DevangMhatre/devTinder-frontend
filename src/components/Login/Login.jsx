@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import toast from "react-hot-toast";
 
 import Email from "./Email";
 import Password from "./Password";
@@ -27,7 +28,8 @@ function Login() {
       dispatch(addUser(res.data));
       navigate("/feed");
     } catch (err) {
-      console.error(err);
+      toast.error(err.response.data);
+      // console.error(err.response.data);
     }
   }
 
