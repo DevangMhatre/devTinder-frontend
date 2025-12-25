@@ -15,6 +15,7 @@ function EditProfile({ user }) {
   const [age, setAge] = useState(user.age);
   const [gender, setGender] = useState(user.gender);
   const [photoURL, setPhotoURL] = useState(user.photoURL);
+  const [isGenderClicked, setIsGenderClicked] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -118,8 +119,9 @@ function EditProfile({ user }) {
                 className="select appearance-none w-full"
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
+                onClick={() => setIsGenderClicked(true)}
               >
-                <option disabled={true}>Choose a Gender</option>
+                <option disabled={isGenderClicked}>Choose a Gender</option>
                 <option>Male</option>
                 <option>Female</option>
                 <option>Others</option>
@@ -151,6 +153,7 @@ function EditProfile({ user }) {
       </div>
       <UserCard
         user={{ firstName, lastName, about, skills, age, gender, photoURL }}
+        isHidden={true}
       />
     </div>
   );

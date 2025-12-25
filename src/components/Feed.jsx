@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFeed } from "../utils/feedSlice";
 import { useEffect } from "react";
 import UserCard from "./UserCard";
+import toast from "react-hot-toast";
 
 function Feed() {
   const feeds = useSelector((store) => store.feed);
@@ -18,7 +19,7 @@ function Feed() {
       // console.log(res.data.data);
       dispatch(addFeed(res?.data?.data));
     } catch (err) {
-      console.error(err);
+      toast.error(err.response.data);
     }
   };
 
@@ -29,15 +30,11 @@ function Feed() {
   return (
     feeds && (
       <div className="flex items-center my-10 flex-col">
-        <h1 className="text-bold text-white text-3xl mb-5">Feeds</h1>
-        <div className="flex gap-25">
-          {feeds.map((feed) => {
-            return (
-              <div className="flex">
-                <UserCard key={feed._id} user={feed} />
-              </div>
-            );
-          })}
+        <h1 className="text-bold text-white text-4xl mb-10">Feeds</h1>
+        <div>
+          <div>
+            <UserCard key={feeds[0]._id} user={feeds[0]} />
+          </div>
         </div>
       </div>
     )
