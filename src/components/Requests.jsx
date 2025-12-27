@@ -60,7 +60,7 @@ function Requests() {
             className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto"
           >
             <div className="flex flex-1">
-              <div>
+              <div className="basis-[15%]">
                 <img
                   className="w-20 h-20 rounded-full"
                   src={photoURL}

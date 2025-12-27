@@ -12,8 +12,8 @@ import { BASE_URL } from "../../utils/constants";
 function SignUp_In() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [emailId, setEmailId] = useState("devang@gmail.com");
-  const [password, setPassword] = useState("Devang@123");
+  const [emailId, setEmailId] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoginForm, setIsLoginForm] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();

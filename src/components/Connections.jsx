@@ -50,7 +50,7 @@ function Connections() {
           >
             <div>
               <img
-                className="w-20 h-20 rounded-full"
+                className="w-20 h-20 rounded-full basis-[10%]"
                 src={photoURL}
                 alt={firstName + " " + "Photo"}
               />
